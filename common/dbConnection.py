@@ -8,7 +8,6 @@ import mysql.connector.errors
 from common.customConst import Const
 class MySQLet:
     """Connection to a MySQL"""
-    # def __init__(self,user='',password='',database='',charset=None,port=3306):
     def __init__(self,**kwargs):
         try:
             self._conn = mysql.connector.connect(host=kwargs["host"], user=kwargs["user"], password=kwargs["password"],
@@ -237,7 +236,7 @@ class MySQLet:
 
 
 if __name__ == "__main__":
-    mysqlet = MySQLet(host="127.0.0.1", user="root", password="", charset="utf8", database="userinfo", port=3306)
+    mysqlet = MySQLet(host="111", user="111", password="1111", charset="utf8", database="1111", port=3306)
     # 根据字段统计count, join>>AND,OR,可以不传，默认为AND
     # print(mysqlet.findKeySql(Const.COUNT, table="info", params={"id": "11", "name": "666"}, join="OR"))
     # # 自定义sql语句统计count
@@ -255,4 +254,4 @@ if __name__ == "__main__":
     # # 根据字段更新数据库中的记录，join可以传AND,OR,不传默认取AND
     # print(mysqlet.findKeySql(Const.UPDATE_BY_ATTR, table="info", data={"name": "-09"}, params={"id": 18, "name": "333"}, join='AND'))
     # 根据自定义sql语句查询记录，limit:0表示所有记录,不传就是一条记录，join：AND|OR.不传取AND
-    print(mysqlet.findKeySql(Const.FIND_BY_SQL, sql="select * from info", params={ "name":"123", "pwd": "567"}))
+    print(mysqlet.findKeySql(Const.FIND_BY_SQL, sql="select * from T_WO_USER", params={ }))

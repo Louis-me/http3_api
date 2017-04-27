@@ -25,11 +25,6 @@ class Const(object):
     DROP = "3" # 数据库中找不到此参数
 
 
-    # 接口统计
-    LOGIN_KEY = ""  # 登陆后返回的key
-    LOGIN_VALUE = ""  # 登陆后返回的value
-
-
     RESULT = {"info": []} # 存最后结果
     # RESULT = {"info": [{"name": "登陆接口", "sum": 5, "success": 5, "failed": 0, "url": "/api/login", "stress": 2},
     #                    {"name": "得到个人信息", "sum": 5, "success": 5, "failed": 0, "url": "/api/getUserInfo"}]}

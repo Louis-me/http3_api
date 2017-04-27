@@ -1,28 +1,26 @@
 ---
 title: XXXX接口测试
-host: rap.taobao.org
+host: int.dpool.sina.com.cn
 port: 80
 protocol: http://
 header: {"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8","User-Agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36"}
-database: {"databaseName":userinfo,"host":"127.0.0.1", "user": "root", "password": "", "port": 3306, "charset": "utf8"}
+database: {"databaseName":userinfo,"host":"1111", "user": "root", "password": "111", "port": 3306, "charset": "utf8"}
 api_list:
 - id: 1001
-  name: 登陆
-  method: post
-  url: /mockjs/11463/login
-  stress: 2
-  hope_sql: {"findKey": "findBySql", "sql": "select * from info", "params": { }}
-  params:
-  - "user_name:user_name:error:0:send_keys:333:type:str,user_name:error:1,user_name:error:2,user_name:error:3:send_keys:22222:type:str"
-  - "pwd:pwd:error:0:send_keys:111:type:str,pwd:error:1,pwd:error:2,pwd:error:3:send_keys:32321:type:str"
-  is_first: 1
-  login_key: user_id
-- id: 1002
-  stress: 2
+  name: 得到ip的归属地
   method: get
+  url: /iplookup/iplookup.php
+  stress: 1
+  hope_sql: {"findKey": "findBySql", "sql": "select * from 1111", "params": { }}
+  params:
+  - "ip:ip:error:0:send_keys:218.4.255.255:type:str,ip:error:1,ip:error:2,ip:error:3:send_keys:22222:type:str"
+  - "format:format:error:0:send_keys:json:type:str,format:error:1,format:error:2,format:error:3:send_keys:32321:type:str"
+- id: 1002
+  stress: 1
+  method: post
   name: 得到个人信息
-  url: /mockjs/11463/getUserInfo
+  url: /iplookup/iplookup.php
   hope_sql: {"findKey": "findBySql", "sql": "select * from info", "params": { }}
   params:
-  - "user_name:user_name:error:0:send_keys:333:type:str,user_name:error:1,user_name:error:2,user_name:error:3:send_keys:22222:type:str"
-  get_login_param: 1
+   - "ip:ip:error:0:send_keys:218.4.255.255:type:str,ip:error:1,ip:error:2,ip:error:3:send_keys:22222:type:str"
+   - "format2:format2:error:0:send_keys:json:type:str,format2:error:1,format2:error:2,format2:error:3:send_keys:32321:type:str

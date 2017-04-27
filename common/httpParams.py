@@ -32,5 +32,6 @@ if  __name__ == "__main__":
     '''
     error: 0正常，1无此参数，2参数的值为空，3在数据库中不存
     '''
+    t2 = {'ip': {'error': '2'}, 'format': {'error': '1'}}
     t1 = {'user_name': {'error': '2'}, 'pwd': {'error': '1'}, "id":{"error":"0", "send_keys": "333", "type":"str"}, "uid":{"error":"3", "send_keys": "444", "type":"str"}}
     print(params_filter(t1))
